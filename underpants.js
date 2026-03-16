@@ -240,63 +240,30 @@ _.identity = function(value){
 *   _.map(obj, function(value){ return value * 10});  // [10, 20, 30]
 */
 
+_.map = function (collection, func) {
+    const output = [];
+    //if collection is an array
+    if (Array.isArray(collection)) {
+        //loop thru collection
+        for (let i = 0; i <collection.length; i++){
+            //invoke func passing in useable arguments
+            const result = func(collection[i], i, collection);
+            output.push(result);
+        }
+    } else { //else is object
+
+    }
+}
 
 
-// _.map = function(collection, func){
-//     const output = [];
 
-//     if (Array.isArray(collection)){ // collection is an array
-//         for (let i = 0; i < collection.length; i++){
-//             // call function on each element passing in element, index, collection
-//             const result = func(collection[i], i, collection);
-//             // save the result of invoking function to an output array
-//             output.push(result);
-//         }
-//     } else { // assume it's an object
-//         for (let key in collection){
-            
-//         }
-//     }
-
-
-//     return output;
-// }
-
-/*
-[]
-if (collection is an an array)
-    // for loop
-        // i = 0
-            // const result = 2
-            // [].push(2) => [2]
-        // i = 1
-            // const result = 4
-            // [2].push(4) => [2, 4]
-        // i = 2
-            // const reuslt = 6
-            // [2, 4].push(6) => [2, 4, 6]
-        // i = 3
-            // const reuslt = 8
-            // [2, 4, 6].push(8) => [2, 4, 6, 8]
-
-*/
+_.map([1, 2, 3], function(x){return x * 10});
 
 
 
 
 
-
-
-// _.map([1,2,3,4], function(e){return e * 2} ); // [2, 4, 6, 8]
-// //       ^
-
-// _.map({ a: 1, b: 2}, function(value){ return value * 2}); // [2, 4]
-
-
-// _.map(['a', 'b', 'c'], function(str){ return str.toUpperCase()}); // ['A', 'B', 'C']
-// //      ^                        a              'A'
-
-
+/
 /** _.pluck
 * Arguments:
 *   1) An array of objects
