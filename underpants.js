@@ -6,12 +6,7 @@
 // Functional library
     // Object with a bunch of functions on it
 
-var _ = {
-    indexOf: function(){
-
-    }
-
-};
+var _ = {};
 
 
 /**
@@ -54,6 +49,26 @@ _.identity = function(value){
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
+
+_.typeOf = function(value) {
+    //if chain to process of elimination typeOf data type
+    if (Array.isArray(value) === true) {
+        return 'array';
+    } else if (value === null) {
+        return 'null';
+    } else {
+        return typeOf value;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 /** _.first
@@ -263,7 +278,7 @@ _.map([1, 2, 3], function(x){return x * 10});
 
 
 
-/
+
 /** _.pluck
 * Arguments:
 *   1) An array of objects
